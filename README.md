@@ -56,7 +56,7 @@ dev=> (reset)
 :reloading (...)
 :resumed
 ```
-
+<!---
 ### Testing
 
 Testing is fastest through the REPL, as you avoid environment startup
@@ -72,6 +72,7 @@ But you can also run tests through Leiningen.
 ```sh
 lein test
 ```
+-->
 
 ## Legal
 
