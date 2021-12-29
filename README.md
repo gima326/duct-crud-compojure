@@ -7,9 +7,16 @@ Webフレームワーク「Duct」入門サンプルコードはいくつかウ�
 動作に必要な「最小限度」ってどんなんだろう、Compojure と MySQL じゃダメなの？<br>
 …ということで、Compojure と MySQL で動くよう試行錯誤した「Duct」のサンプルコードです。<br>
 
-ataraxy 版だと、設定ファイル（.edn）がどんどん膨れあがる（EJB の .xml じみてる）。<br>
+あと、個人の感想ですが、と断りつつ。<br>
+なんだか ataraxy 版だと、設定ファイル（.edn）が EJB の .xml じみてるな、と。<br>
+
+・ルーティングごとの関数名に、いちいち長々クラスパスがついている。<br>
+・その関数の処理が DB アクセスをともなう場合、{:db #ig/ref :duct.database/sql} といちいち書くのぉ！？<br>
+・で、その関数実体は別ファイルに移動して確認しないといけない、と。<br>
 
 ```edn
+;; [ duct-crud-practice/resources/duct-crud-practice/config.edn ]
+
 {:duct.profile/base
  {:duct.core/project-ns duct-crud-practice
 
@@ -63,8 +70,9 @@ ataraxy 版だと、設定ファイル（.edn）がどんどん膨れあがる�
  {:database-url "jdbc:mysql://localhost:3306/test?user=root&password=password"}
 }
 ```
-
+「ボイラープレート」ってゆーんじゃなかったっけ？<br>
 全然 Clojure らしくないな、と（ソースコードのように、関数、マクロで重複部分を抽象化することもできない）。<br>
+…なので、ataraxy 版の印象良くないっす。<br>
 
 ## Developing
 
