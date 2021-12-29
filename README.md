@@ -76,8 +76,7 @@ Webフレームワーク「Duct」入門サンプルコードはいくつかウ�
 
 このサイトを参考にしました。<br>
 
-「[試行錯誤な日々](https://asukiaaa.blogspot.com/2017/12/clojureductcrud.html
-){:target="_blank"}」[ `https://asukiaaa.blogspot.com/2017/12/clojureductcrud.html` ]<br>
+「<a href="https://asukiaaa.blogspot.com/2017/12/clojureductcrud.html" target="_blank">試行錯誤な日々</a>」 [ `https://asukiaaa.blogspot.com/2017/12/clojureductcrud.html` ]<br>
 
 ## Developing
 
