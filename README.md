@@ -71,7 +71,8 @@ Compojure と MySQL じゃダメなの？<br>
  {:database-url "jdbc:mysql://localhost:3306/test?user=root&password=password"}
 }
 ```
-「ボイラープレート」ってゆーんじゃなかったっけ？<br>
+
+こういうの、「ボイラープレート」ってゆーんじゃなかったっけ？<br>
 全然 Clojure らしくないな、と（ソースコードのように、関数、マクロで重複部分を抽象化することもできない）。<br>
 …なので、ataraxy 版の印象良くないっす。<br><br>
 
