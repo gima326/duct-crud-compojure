@@ -8,6 +8,62 @@ Webフレームワーク「Duct」入門サンプルコードはいくつかウ�
 …ということで、Compojure と MySQL で動くよう試行錯誤した「Duct」のサンプルコードです。<br>
 
 ataraxy 版だと、設定ファイル（.edn）がどんどん膨れあがる（EJB の .xml じみてる）。<br>
+
+```edn
+{:duct.profile/base
+ {:duct.core/project-ns duct-crud-practice
+
+  :duct.router/ataraxy
+  {:routes { [:get "/example"] [:duct-crud-practice.handler/example]
+             ["/users"] { [:get] [:duct-crud-practice.handler/user-index]
+                          [:get "/new"] [:duct-crud-practice.handler/user-new]
+                          [:post "/" {body :params}] [:duct-crud-practice.handler/user-create body]
+
+                          [:get "/" id] [:duct-crud-practice.handler/user-show id]
+                          [:get "/" id "/edit"] [:duct-crud-practice.handler/user-edit id]
+
+                          [:post "/" id "/update" {body :params}] [:duct-crud-practice.handler/user-update id body]
+                          [:post "/" id "/delete"] [:duct-crud-practice.handler/user-del id] }
+             }
+   }
+
+  :duct-crud-practice.handler/example {}
+
+  :duct-crud-practice.handler/user-index
+  {:db #ig/ref :duct.database/sql}
+
+  :duct-crud-practice.handler/user-new {}
+
+  :duct-crud-practice.handler/user-create
+  {:db #ig/ref :duct.database/sql}
+
+  :duct-crud-practice.handler/user-show
+  {:db #ig/ref :duct.database/sql}
+
+  :duct-crud-practice.handler/user-edit
+  {:db #ig/ref :duct.database/sql}
+
+  :duct-crud-practice.handler/user-update
+  {:db #ig/ref :duct.database/sql}
+
+  :duct-crud-practice.handler/user-del
+  {:db #ig/ref :duct.database/sql}
+
+  }
+
+ :duct.profile/dev   #duct/include "dev"
+ :duct.profile/local #duct/include "local"
+ :duct.profile/prod  {}
+
+ :duct.module/logging {}
+
+  ;; add
+ :duct.module/web {}
+ :duct.module/sql
+ {:database-url "jdbc:mysql://localhost:3306/test?user=root&password=password"}
+}
+```
+
 全然 Clojure らしくないな、と（ソースコードのように、関数、マクロで重複部分を抽象化することもできない）。<br>
 
 ## Developing
