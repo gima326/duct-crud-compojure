@@ -1,6 +1,14 @@
 # duct-crud-compojure
 
-FIXME: description
+Webフレームワーク「Duct」入門サンプルコードはいくつかウェブ上にあるけれど、
+なぜか、どれも判で押したように ataraxy と Postgres の組み合わせ。あとは、不必要に docker と絡めていたり。
+…えーと、僕はローカル環境で「Duct」を試したいだけなんすけどぉ？
+
+動作に必要な「最小限度」ってどんなんだろう、Compojure と MySQL じゃダメなの？
+…ということで、Compojure と MySQL で動くよう試行錯誤した「Duct」のサンプルコードです。
+
+ataraxy 版だと、設定ファイル（.edn）がどんどん膨れあがるんだな、と（ソースコードのように関数、マクロで重複部分を抽象化することもできない）。
+EJB の .xml みたくって、全然 Clojure らしくないな、とゆー不満とともに。
 
 ## Developing
 
