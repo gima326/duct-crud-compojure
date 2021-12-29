@@ -47,14 +47,14 @@
 
    [:button {:type "submit"} "Submit"]])
 
-(defn new-user-view [user error-messages]
-  (html [:div "[ New User ]"
-         (user-form "/new" user
-                    :error-messages error-messages)]))
-
 (defn edit-user-view [user-id user error-messages]
   (html [:div "[ Edit User ]"
          (user-form (str "/users/" user-id "/update") user
+                    :error-messages error-messages)]))
+
+(defn new-user-view [user error-messages]
+  (html [:div "[ New User ]"
+         (user-form "/new" user
                     :error-messages error-messages)]))
 
 (defn show-users-view [users]
@@ -89,19 +89,19 @@
  (let [user (first (db.users/get-user db id))]
   (edit-user-view id user nil)))
 
-(defn insert [db {:keys [params]}]
-  (if (s.user/valid? params)
-    (let [rslt (first (db.users/create-user db params))]
-      (redirect (str "/users/" (:generated_key  rslt))))
-      (new-user-view params (s.user/error-messages params))))
-
-(defn delete [db id]
+(defn del [db id]
   (if (= '(1) (db.users/delete-user db id))
     (redirect "/users")
     (let [user (first (db.users/get-user db id))]
       (show-user-view user))))
 
-(defn update [db id {:keys [params]}]
+(defn ins [db {:keys [params]}]
+  (if (s.user/valid? params)
+    (let [rslt (first (db.users/create-user db params))]
+      (redirect (str "/users/" (:generated_key  rslt))))
+      (new-user-view params (s.user/error-messages params))))
+
+(defn upd [db id {:keys [params]}]
   (if (and
         (s.user/valid? params)
         (= '(1) (db.users/update-user db id params)))
@@ -114,9 +114,9 @@
 　(routes
    (GET  "/example"          []   (html [:span "This is an example handler"]))
    (GET  "/new"              []   (new-user-view nil nil))
-   (POST "/new"              []   #(insert db %))
+   (POST "/new"              []   #(ins db %))
    (GET  "/users"            []   (show-users-view (db.users/get-users db)))
    (GET  "/users/:id"        [id] (show-user-view (first (db.users/get-user db id))))
    (GET  "/users/:id/edit"   [id] (edit db id))
-   (POST "/users/:id/delete" [id] (delete db id))
-   (POST "/users/:id/update" [id] #(update db id %))))
+   (POST "/users/:id/delete" [id] (del db id))
+   (POST "/users/:id/update" [id] #(upd db id %))))
