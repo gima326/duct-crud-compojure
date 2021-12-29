@@ -1,7 +1,7 @@
 # duct-crud-compojure
 
 Webフレームワーク「Duct」入門サンプルコードはいくつかウェブ上にあるけれど、<br>
-なぜか、どれも判で押したように ataraxy と PostgreSQL の組み合わせ。あとは、不必要に docker と絡めていたり。<br>
+なぜか判で押したように ataraxy と PostgreSQL の組み合わせ。あとは、不必要に docker と絡めていたり。<br>
 …えーと、僕はローカル環境で「Duct」を試したいだけなんすけどぉ？<br>
 
 動作に必要な「最小限度」ってどんなんだろう、Compojure と MySQL じゃダメなの？<br>
