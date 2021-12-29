@@ -143,8 +143,9 @@ But you can also run tests through Leiningen.
 ```sh
 lein test
 ```
--->
 
 ## Legal
 
 Copyright © 2021 FIXME
+
+-->
