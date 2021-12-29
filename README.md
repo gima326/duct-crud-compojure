@@ -7,12 +7,6 @@ Webフレームワーク「Duct」入門サンプルコードはいくつかウ�
 動作に必要な「最小限度」ってどんなんだろう、Compojure と MySQL じゃダメなの？<br>
 …ということで、Compojure と MySQL で動くよう試行錯誤した「Duct」のサンプルコードです。<br>
 
-このサイトを参考にしました。<br>
-
-「[試行錯誤な日々][1]」[ `https://asukiaaa.blogspot.com/2017/12/clojureductcrud.html` ]<br><br>
-
-[1]: https://asukiaaa.blogspot.com/2017/12/clojureductcrud.html
-
 あと、「個人の感想ですが」と断りつつも。<br>
 なんだか ataraxy 版だと、設定ファイル（.edn）が EJB の .xml じみてるな、と。<br>
 
@@ -78,7 +72,13 @@ Webフレームワーク「Duct」入門サンプルコードはいくつかウ�
 ```
 「ボイラープレート」ってゆーんじゃなかったっけ？<br>
 全然 Clojure らしくないな、と（ソースコードのように、関数、マクロで重複部分を抽象化することもできない）。<br>
-…なので、ataraxy 版の印象良くないっす。<br>
+…なので、ataraxy 版の印象良くないっす。<br><br>
+
+このサイトを参考にしました。<br>
+
+「[試行錯誤な日々][1]」[ `https://asukiaaa.blogspot.com/2017/12/clojureductcrud.html` ]<br>
+
+[1]: https://asukiaaa.blogspot.com/2017/12/clojureductcrud.html
 
 ## Developing
 
