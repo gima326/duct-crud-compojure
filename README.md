@@ -76,12 +76,6 @@ Compojure と MySQL じゃダメなの？<br>
 全然 Clojure らしくないな、と（ソースコードのように、関数、マクロで重複部分を抽象化することもできない）。<br>
 …なので、ataraxy 版の印象良くないっす。<br><br>
 
-このサイトを参考にしました。<br>
-
-「[試行錯誤な日々][1]」 [ `https://asukiaaa.blogspot.com/2017/12/clojureductcrud.html` ]<br>
-
-[1]: https://asukiaaa.blogspot.com/2017/12/clojureductcrud.html
-
 ## Developing
 
 ### Setup
@@ -151,5 +145,10 @@ Copyright © 2021 FIXME
 
 -->
 
-### References
-- [clojureのductでcrudアプリを作る方法](http://asukiaaa.blogspot.jp/2017/12/clojureductcrud.html)
+## References
+
+このサイトを参考にしました。<br>
+
+- 「[clojureのductでcrudアプリを作る方法][1]」 [ `https://asukiaaa.blogspot.com/2017/12/clojureductcrud.html` ]<br>
+
+[1]: https://asukiaaa.blogspot.com/2017/12/clojureductcrud.html
