@@ -99,7 +99,7 @@
   (if (s.user/valid? params)
     (let [rslt (first (db.users/create-user db params))]
       (redirect (str "/users/" (:generated_key  rslt))))
-      (new-user-view params (s.user/error-messages params))))
+    (new-user-view params (s.user/error-messages params))))
 
 (defn upd [db id {:keys [params]}]
   (if (and
