@@ -147,6 +147,7 @@ Copyright © 2021 FIXME
 
 ## References
 
-- 「[clojureのductでcrudアプリを作る方法][1]」 [ `https://asukiaaa.blogspot.com/2017/12/clojureductcrud.html` ]<br>
+- 「[clojureのductでcrudアプリを作る方法][1]」<br>
+　[ `https://asukiaaa.blogspot.com/2017/12/clojureductcrud.html` ]<br>
 
 [1]: https://asukiaaa.blogspot.com/2017/12/clojureductcrud.html
